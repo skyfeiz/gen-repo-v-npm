@@ -63,3 +63,16 @@ npx gen-repo-v --out dist/app/version.json
 | `version`    | 当前短 commit hash                     |
 | `commit`     | 完整 hash、提交说明、作者、提交时间    |
 | `time`       | 生成文件时的本地时间                   |
+
+## 发布到 npm
+
+在 GitHub 仓库 **Settings → Secrets and variables → Actions** 中配置 `NPM_TOKEN`（npm 账号的 [Access Token](https://www.npmjs.com/settings/~your-account/tokens)，需具备 **Automation** 或 **Publish** 权限）。
+
+发布流程：
+
+1. 将 `package.json` 中的 `version` 更新为目标版本（如 `0.1.2`）
+2. 提交并推送，打标签并推送：`git tag v0.1.2 && git push origin v0.1.2`  
+   或在 GitHub 上创建 **Release**（标签名需为 `v` + 版本号，如 `v0.1.2`）
+3. 推送 `v*` 标签或发布 Release 后，GitHub Actions 会自动执行 `npm publish`
+
+标签版本（去掉前缀 `v`）必须与 `package.json` 中的 `version` 一致，否则工作流会失败。
