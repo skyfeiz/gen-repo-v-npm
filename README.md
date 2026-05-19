@@ -7,19 +7,19 @@
 在项目根目录执行（写入 `./version.json`）：
 
 ```bash
-npx gen-repo-v
+npx -y gen-repo-v
 ```
 
 构建产物目录（与历史 `version.mjs` 行为一致，目录存在才写入）：
 
 ```bash
-npx gen-repo-v --dist dist/standard
+npx -y gen-repo-v --dist dist/standard
 ```
 
 指定输出路径：
 
 ```bash
-npx gen-repo-v --out dist/app/version.json
+npx -y gen-repo-v --out dist/app/version.json
 ```
 
 在 `package.json` 的构建脚本中：
@@ -27,7 +27,7 @@ npx gen-repo-v --out dist/app/version.json
 ```json
 {
   "scripts": {
-    "build": "vite build && npx gen-repo-v --dist dist"
+    "build": "vite build && npx -y gen-repo-v --dist dist"
   }
 }
 ```

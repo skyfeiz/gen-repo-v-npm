@@ -6,7 +6,7 @@ import { collectVersionInfo, writeVersionJson } from '../lib/index.mjs';
 
 function printHelp() {
   console.log(`
-用法: npx @ft/gen-repo-v [选项]
+用法: npx -y gen-repo-v [选项]
 
 从当前目录的 Git 仓库读取远程地址、分支、commit 等信息，生成 version.json。
 
