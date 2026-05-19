@@ -12,7 +12,8 @@
     "README.md"
   ],
   "scripts": {
-    "start": "node bin/cli.mjs"
+    "start": "node bin/cli.mjs",
+    "release": "bumpp"
   },
   "keywords": [
     "repo",
@@ -29,5 +30,8 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "devDependencies": {
+    "bumpp": "^11.1.0"
   }
 }
