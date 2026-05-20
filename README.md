@@ -10,10 +10,10 @@
 npx -y gen-repo-v
 ```
 
-构建产物目录（与历史 `version.mjs` 行为一致，目录存在才写入）：
+构建产物目录（目录存在才写入）：
 
 ```bash
-npx -y gen-repo-v --dist dist/standard
+npx -y gen-repo-v --dist dist/app
 ```
 
 指定输出路径：
@@ -47,8 +47,11 @@ npx -y gen-repo-v --out dist/app/version.json
 
 字段说明：
 
-| 字段         | 说明                                 |
-| ------------ | ------------------------------------ |
-| `repository` | `git remote get-url origin` 完整地址 |
-| `version`    | 当前短 commit hash                   |
-| `time`       | 生成文件时的本地时间                 |
+| 字段         | 说明                                     |
+| ------------ | ---------------------------------------- |
+| `node`       | 当前 Node.js 版本                        |
+| `repository` | `git remote get-url origin` 完整地址     |
+| `branch`     | 当前分支名称                             |
+| `version`    | 当前短 commit hash                       |
+| `env`        | 当前环境，如 `production`、`development` |
+| `time`       | 生成文件时的本地时间                     |
